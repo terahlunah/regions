@@ -64,12 +64,13 @@ const RegionsList = () => {
                 regions.map((region, index) => {
 
                     const setName = (name: string) => {
-                        regions[index] = {
+                        const regions2 = structuredClone(regions)
+                        regions2[index] = {
                             ...region,
                             name,
                         }
                         console.log("setName")
-                        setRegions(regions)
+                        setRegions(regions2)
                     };
 
                     return <RegionCard region={region} setName={setName}/>;
