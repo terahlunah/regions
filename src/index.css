@@ -10,3 +10,19 @@
 .debug {
     @apply border-2 border-red-500
 }
+
+.debug2 {
+    @apply border-2 border-blue-500
+}
+
+.debug3 {
+    @apply border-2 border-green-500
+}
+
+/*.dep:hover {*/
+/*    transform: scale(1.2);*/
+/*}*/
+/*.dep {*/
+/*    transition: all 1s;*/
+/*    transform-origin: 50% 50%;*/
+/*}*/

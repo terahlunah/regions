@@ -4,6 +4,8 @@ import React, {ReactNode, useState} from "react";
 export type RegionStore = {
     regions: Region[],
     setRegions: (regions: Region[]) => void,
+    selectedRegion: number | null,
+    setSelectedRegion: (id: number | null) => void,
 }
 
 export type Region = {
@@ -17,6 +19,8 @@ export const RegionsContext = React.createContext<RegionStore>({
     setRegions: () => {
         console.log("Default set regions")
     },
+    selectedRegion : null,
+    setSelectedRegion: () => {}
 })
 
 export const RegionsProvider = ({children}: { children: ReactNode }) => {
@@ -34,9 +38,13 @@ export const RegionsProvider = ({children}: { children: ReactNode }) => {
         },
     ])
 
+    const [selectedRegion, setSelectedRegion] = useState<number | null>(null)
+
     const store = {
         regions,
-        setRegions
+        setRegions,
+        selectedRegion,
+        setSelectedRegion
     }
 
     return <RegionsContext.Provider value={store}>{children}</RegionsContext.Provider>
