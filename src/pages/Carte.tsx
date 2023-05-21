@@ -2,15 +2,32 @@ import {ComposableMap, Geographies, Geography} from "react-simple-maps"
 import geo from "../assets/dep_geo.json";
 import {Row} from "../components/Row.tsx";
 import {Col} from "../components/Col.tsx";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import {Region, RegionsContext} from "../stores/RegionsStore.tsx";
 import {regionsColors} from "../colors.tsx";
 import {PaintBrushIcon, PencilSquareIcon, PlusCircleIcon, TrashIcon} from "@heroicons/react/20/solid";
-
+import {useNavigate, useParams} from "react-router-dom";
+import {dumpData, loadData} from "../compression.tsx";
 
 export const Carte = () => {
+    const {template} = useParams();
+    const encodedData = useRef("")
 
     const {selectedRegion, setSelectedRegion, regions, setRegions} = useContext(RegionsContext);
+
+    useEffect(() => {
+        // Decode template
+        const decoded = loadData(template)
+        if (decoded) setRegions(decoded)
+    }, []);
+
+    const encoded = dumpData(regions)
+    const navigate = useNavigate()
+    if (encoded != encodedData.current) {
+        encodedData.current = encoded
+        navigate(`/carte/${encoded}`, {replace: true})
+    }
+
 
     const hasSelection = selectedRegion != null
     const selectedColor = hasSelection ? regionsColors[regions[selectedRegion].color] : "rgb(20, 20, 20)";
@@ -61,7 +78,9 @@ export const Carte = () => {
 
                             const geos = structuredClone(geographies)
                             if (hovered != null) {
-                                geos.push(hovered)
+                                const clone = structuredClone(hovered)
+                                clone.rsmKey = "hovered"
+                                geos.push(clone)
                             }
 
                             return geos.map((geo) => {
@@ -250,7 +269,7 @@ const RegionCard = ({region, setName, setColorIndex, select, selected, remove}: 
                         }
                     </button>
                     <button className="" onClick={toggleLabelEdit}>
-                        <PencilSquareIcon className="w-5 h-5 fill-on-primary mr-2"/>
+                        <PencilSquareIcon className="w-5 h-5 fill-on-primary mx-2"/>
                     </button>
                     <button className="" onClick={togglePalette}>
                         <PaintBrushIcon className="w-5 h-5 fill-on-primary mr-2"/>
