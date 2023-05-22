@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     './src/**/*.tsx',
@@ -6,6 +7,12 @@ export default {
   ],
   theme: {
     extend: {
+      height: {
+        '200': '50rem',
+      },
+      maxHeight: {
+        '200': '50rem',
+      },
       animation: {
         'spin-slow': 'spin 60s linear infinite',
       },
@@ -14,7 +21,7 @@ export default {
         'primary-variant': '#0b35c4',
         'secondary': '#03DAC6',
         'secondary-variant': '#008f6f',
-        'surface': '#3b3737',
+        'surface': '#333131',
         'background': '#212121',
         'on-surface': '#FFFFFF',
         'on-background': '#FFFFFF',
@@ -23,6 +30,8 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({nocompatible: true}),
+  ],
 }
 

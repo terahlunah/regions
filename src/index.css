@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply bg-background
+}
+
 * {
     font-family: 'Montserrat', cursive;
     @apply text-on-surface font-light

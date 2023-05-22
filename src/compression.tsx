@@ -21,19 +21,21 @@ export function dumpData(data: Region[]): string {
 
 export function loadData(encoded: string): Region[] {
     const mini = JSON.parse(LZString.decompressFromEncodedURIComponent(encoded))
-    return mini.map(([name, color, deps]) => {
+    return mini.map(([name, color, rawDeps]) => {
+        const mappedDeps = rawDeps.map(d => {
+            if (d === 200) {
+                return "2A"
+            } else if (d === 201) {
+                return "2B"
+            } else {
+                return d.toString().padStart(2, "0")
+            }
+        })
+        const deps = [...new Set(mappedDeps)];
         return {
             name,
             color,
-            deps: deps.map(d => {
-                if (d === 200) {
-                    return "2A"
-                } else if (d === 201) {
-                    return "2B"
-                } else {
-                    return d.toString()
-                }
-            }),
+            deps,
         }
     })
 }

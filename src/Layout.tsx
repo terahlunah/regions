@@ -1,7 +1,14 @@
 import {Outlet} from "react-router-dom";
 import {Topbar, TopbarItem} from "./components/Topbar.tsx";
+import {useContext} from "react";
+import {RegionsContext} from "./stores/RegionsStore.tsx";
+import {dumpData} from "./compression.tsx";
+import {Col} from "./components/Col.tsx";
 
 export const Layout = () => {
+
+    const {regions} = useContext(RegionsContext)
+
     const topbarItems: TopbarItem[] = [
         {
             name: "Accueil",
@@ -9,7 +16,7 @@ export const Layout = () => {
         },
         {
             name: "Carte",
-            link: "/carte",
+            link: "/carte/" + (regions ? dumpData(regions) : "NoXSA"),
         },
         {
             name: "Infos",
@@ -18,13 +25,11 @@ export const Layout = () => {
     ]
 
     return (
-        <>
-            <div className="flex flex-row w-screen h-screen">
-                <div className="flex flex-col h-screen w-full bg-background">
-                    <Topbar items={topbarItems}/>
-                    <Outlet/>
-                </div>
-            </div>
-        </>
+        <div className="bg-background">
+            <Col className="h-full w-full">
+                <Topbar items={topbarItems}/>
+                <Outlet/>
+            </Col>
+        </div>
     );
 }
