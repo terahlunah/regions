@@ -15,7 +15,7 @@ import depData from "../assets/dep_data.json"
 export const Carte = () => {
 
     return (
-        <Col className="w-full items-center">
+        <Col className="w-full items-center overflow-auto">
             <CartePanel/>
             <StatsPanel/>
         </Col>
@@ -79,9 +79,9 @@ export const CartePanel = () => {
 
 
     return (
-        <div className="w-full flex justify-center max-h-200">
+        <div className="w-full flex justify-center lg:max-h-200">
             <div className="max-w-screen-2xl w-full">
-                <Row className="w-full h-200">
+                <div className="w-full h-200 grid grid-cols-1 xl:grid-cols-2">
                     <div className="basis-2/3 h-full">
                         <ComposableMap
                             // width={h}
@@ -158,10 +158,10 @@ export const CartePanel = () => {
                         </ComposableMap>
                     </div>
                     <div
-                        className="pb-16 basis-1/3 overflow-auto h-full scrollbar-thin scrollbar-thumb-surface scrollbar-track-black scrollbar-thumb-rounded-md scrollbar-track-rounded">
+                        className="pb-16 basis-1/3 lg:overflow-auto h-full scrollbar-thin scrollbar-thumb-surface scrollbar-track-black scrollbar-thumb-rounded-md scrollbar-track-rounded">
                         <RegionsList selectRegion={selectRegion}/>
                     </div>
-                </Row>
+                </div>
             </div>
         </div>
     )
@@ -368,7 +368,7 @@ const StatsPanel = () => {
 
     return (
         <div
-            className="w-full max-w-screen-2xl grid grid-cols-2 gap-16 justify-evenly justify-items-center mx-8 my-20">
+            className="w-full lg:max-w-screen-2xl grid grid-cols1 lg:grid-cols-2 gap-16 justify-evenly justify-items-center mx-8 my-20">
             <StatPanel name="Population (Millions)" selector={popSelector} precision={2}/>
             <StatPanel name="PIB (Milliards)" selector={gdpSelector} precision={0}/>
             <StatPanel name="Nombre de Départements" selector={depSelector} precision={0}/>
