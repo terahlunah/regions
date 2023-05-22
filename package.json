@@ -1,6 +1,7 @@
 {
   "name": "regions",
   "private": true,
+  "homepage": "https://terahlunah.github.io/regions",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

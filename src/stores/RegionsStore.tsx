@@ -19,24 +19,14 @@ export const RegionsContext = React.createContext<RegionStore>({
     setRegions: () => {
         console.log("Default set regions")
     },
-    selectedRegion : null,
-    setSelectedRegion: () => {}
+    selectedRegion: null,
+    setSelectedRegion: () => {
+    }
 })
 
 export const RegionsProvider = ({children}: { children: ReactNode }) => {
 
-    const [regions, setRegions] = useState<Region[]>([
-        {
-            name: "Occitanie",
-            color: 0,
-            deps: []
-        },
-        {
-            name: "Aquitaine",
-            color: 1,
-            deps: []
-        },
-    ])
+    const [regions, setRegions] = useState<Region[]>([])
 
     const [selectedRegion, setSelectedRegion] = useState<number | null>(null)
 

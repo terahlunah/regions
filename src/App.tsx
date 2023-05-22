@@ -7,7 +7,7 @@ import {Carte} from "./pages/Carte.tsx";
 
 const App = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<Home/>}/>
