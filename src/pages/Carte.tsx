@@ -5,7 +5,7 @@ import {Col} from "../components/Col.tsx";
 import React, {useContext, useEffect, useRef, useState} from "react";
 import {Region, RegionsContext} from "../stores/RegionsStore.tsx";
 import {regionsColors} from "../colors.tsx";
-import {PaintBrushIcon, PencilSquareIcon, PlusCircleIcon, TrashIcon} from "@heroicons/react/20/solid";
+import {PaintBrushIcon, PlusCircleIcon, TagIcon, TrashIcon} from "@heroicons/react/20/solid";
 import {useNavigate, useParams} from "react-router-dom";
 import {dumpData, loadData} from "../compression.tsx";
 import * as _ from "lodash"
@@ -311,7 +311,7 @@ const RegionCard = ({region, setName, setColorIndex, select, selected, remove}: 
                         }
                     </button>
                     <button className="" onClick={toggleLabelEdit}>
-                        <PencilSquareIcon className="w-5 h-5 fill-on-primary mx-2"/>
+                        <TagIcon className="w-5 h-5 fill-on-primary mx-2"/>
                     </button>
                     <PalettePopover onSelectColor={setColorIndex}/>
                     <button className="" onClick={onDelete}>
