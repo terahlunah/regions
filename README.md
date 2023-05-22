@@ -1,6 +1,8 @@
+Le site n'est pas (encore) responsive
+
 # Pourquoi ce site ?
 
-J'ai crée cet app suite aux discussions que j'ai eu avec mon père sur le découpage idéal des régions. C'est un outil
+J'ai crée cette app suite aux discussions que j'ai eu avec mon père sur le découpage idéal des régions. C'est un outil
 tout simple pour s'amuser à imaginer un découpage différent de la France en régions.
 
 # Comment partager une carte ?
