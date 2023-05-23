@@ -10,7 +10,7 @@ export const About = () => {
                         Pourquoi ce site ?
                     </h1>
                     <p className="my-8">
-                        J'ai crée ce site suite aux discussions que j'ai eu avec mon père sur le découpage idéal des
+                        J'ai créé ce site suite aux discussions que j'ai eu avec mon père sur le découpage idéal des
                         régions. C'est un outil tout simple pour s'amuser à imaginer un découpage différent de la France
                         en régions.
                     </p>

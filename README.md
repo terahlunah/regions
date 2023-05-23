@@ -1,4 +1,4 @@
-Le site n'est pas (encore) responsive
+Le site est plus ou moins responsive
 
 # Pourquoi ce site ?
 
