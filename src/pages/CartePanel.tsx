@@ -105,7 +105,7 @@ export const CartePanel = () => {
                                         const region = regions.find(r => r.deps.includes(code))
                                         const regionName = region ? " - " + region.name : ""
                                         const colorIndex = region?.color
-                                        const fillColor = colorIndex ? regionsColors[colorIndex] : 'rgb(40, 40, 40)'
+                                        const fillColor = colorIndex != undefined ? regionsColors[colorIndex] : 'rgb(40, 40, 40)'
                                         const hoverBorderColor = fillColor == selectedColor ? '#fff' : selectedColor
 
                                         const onMouseEnter = () => {
