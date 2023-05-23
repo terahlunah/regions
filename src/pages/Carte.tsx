@@ -79,7 +79,7 @@ export const CartePanel = () => {
 
 
     return (
-        <div className="debug w-full flex flex-col justify-center xl:max-h-200">
+        <div className="w-full flex flex-col justify-center xl:max-h-200">
             <div className="max-w-screen-2xl w-full">
                 <div className="w-full xl:h-200 grid grid-cols-1 xl:flex xl:flex-row">
                     <div className="xl:basis-2/3 h-full">
@@ -158,7 +158,7 @@ export const CartePanel = () => {
                         </ComposableMap>
                     </div>
                     <div
-                        className="debug2 pb-16 xl:basis-1/3 xl:overflow-auto h-full xl:scrollbar-thin xl:scrollbar-thumb-surface xl:scrollbar-track-black xl:scrollbar-thumb-rounded-md xl:scrollbar-track-rounded">
+                        className="pb-16 xl:basis-1/3 xl:overflow-auto h-full xl:scrollbar-thin xl:scrollbar-thumb-surface xl:scrollbar-track-black xl:scrollbar-thumb-rounded-md xl:scrollbar-track-rounded">
                         <RegionsList selectRegion={selectRegion}/>
                     </div>
                 </div>
@@ -368,7 +368,7 @@ const StatsPanel = () => {
 
     return (
         <div
-            className="debug3 w-full xl:max-w-screen-2xl grid grid-cols-1 xl:grid-cols-2 gap-16 justify-evenly justify-items-center mx-8 my-20">
+            className="w-full xl:max-w-screen-2xl grid grid-cols-1 xl:grid-cols-2 gap-16 justify-evenly justify-items-center mx-8 my-20">
             <StatPanel name="Population (Millions)" selector={popSelector} precision={2}/>
             <StatPanel name="PIB (Milliards)" selector={gdpSelector} precision={0}/>
             <StatPanel name="Nombre de Départements" selector={depSelector} precision={0}/>
