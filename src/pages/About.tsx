@@ -4,9 +4,9 @@ import {Col} from "../components/Col.tsx";
 export const About = () => {
     return (
         <Col className="justify-center items-center w-full h-full">
-            <Surface className="mx-16 max-w-5xl mt-10">
+            <Surface className="mx-4 lg:mx-16 max-w-5xl mt-10">
                 <div className="p-8">
-                    <h1 className="text-3xl">
+                    <h1 className="text-2xl lg:text-3xl">
                         Pourquoi ce site ?
                     </h1>
                     <p className="my-8">
@@ -14,14 +14,14 @@ export const About = () => {
                         régions. C'est un outil tout simple pour s'amuser à imaginer un découpage différent de la France
                         en régions.
                     </p>
-                    <h1 className="text-3xl">
+                    <h1 className="text-2xl lg:text-3xl">
                         Comment partager une carte ?
                     </h1>
                     <p className="my-8">
                         Il suffit simplement de copier l'url, elle se met à jour à chaque changement et contient les
                         données de votre carte.
                     </p>
-                    <h1 className="text-3xl">
+                    <h1 className="text-2xl lg:text-3xl">
                         D'ou viennent les données ?
                     </h1>
                     <p className="my-8">
@@ -33,7 +33,7 @@ export const About = () => {
                         Les données économiques viennent d' <a className="text-secondary"
                                                                href="https://ec.europa.eu/eurostat/databrowser/view/nama_10r_3gdp/default/table?lang=en">Eurostat</a>.
                     </p>
-                    <h1 className="text-3xl">
+                    <h1 className="text-2xl lg:text-3xl">
                         Est-ce open-source ?
                     </h1>
                     <p className="my-8">
