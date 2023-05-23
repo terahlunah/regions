@@ -10,7 +10,7 @@ import {Row} from "../components/Row.tsx";
 import {PaintBrushIcon, PlusCircleIcon, TagIcon, TrashIcon} from "@heroicons/react/20/solid";
 import {Popover} from "@headlessui/react";
 import {Tooltip} from 'react-tooltip'
-import depData from "../assets/dep_data.json";
+import * as _ from "lodash";
 
 export const CartePanel = () => {
     const {template} = useParams();
